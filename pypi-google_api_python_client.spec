@@ -4,7 +4,7 @@
 #
 Name     : pypi-google_api_python_client
 Version  : 2.43.0
-Release  : 80
+Release  : 81
 URL      : https://files.pythonhosted.org/packages/17/db/507dcc7b06ac591979f5fb0d55d53c0f436be65a09a3601e746c4574f488/google-api-python-client-2.43.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/17/db/507dcc7b06ac591979f5fb0d55d53c0f436be65a09a3601e746c4574f488/google-api-python-client-2.43.0.tar.gz
 Summary  : Google API Client Library for Python
@@ -65,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649258814
+export SOURCE_DATE_EPOCH=1649752341
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
