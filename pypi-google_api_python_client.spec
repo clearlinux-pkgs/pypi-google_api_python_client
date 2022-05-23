@@ -4,7 +4,7 @@
 #
 Name     : pypi-google_api_python_client
 Version  : 2.48.0
-Release  : 86
+Release  : 87
 URL      : https://files.pythonhosted.org/packages/32/ce/a3ddd0d18ab4364482e42e166ae3cd61307499a936ad384663438d10bf83/google-api-python-client-2.48.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/32/ce/a3ddd0d18ab4364482e42e166ae3cd61307499a936ad384663438d10bf83/google-api-python-client-2.48.0.tar.gz
 Summary  : Google API Client Library for Python
@@ -14,8 +14,6 @@ Requires: pypi-google_api_python_client-license = %{version}-%{release}
 Requires: pypi-google_api_python_client-python = %{version}-%{release}
 Requires: pypi-google_api_python_client-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(google_api_core)
-BuildRequires : pypi(google_auth)
 BuildRequires : pypi(google_auth_httplib2)
 BuildRequires : pypi(httplib2)
 BuildRequires : pypi(uritemplate)
@@ -59,13 +57,16 @@ python3 components for the pypi-google_api_python_client package.
 %prep
 %setup -q -n google-api-python-client-2.48.0
 cd %{_builddir}/google-api-python-client-2.48.0
+pushd ..
+cp -a google-api-python-client-2.48.0 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652887869
+export SOURCE_DATE_EPOCH=1653333198
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -74,6 +75,15 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
+python3 setup.py build
+
+popd
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
@@ -83,6 +93,15 @@ python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
+python3 -tt setup.py build install --root=%{buildroot}-v3
+popd
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
