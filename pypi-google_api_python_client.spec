@@ -4,7 +4,7 @@
 #
 Name     : pypi-google_api_python_client
 Version  : 2.56.0
-Release  : 98
+Release  : 99
 URL      : https://files.pythonhosted.org/packages/c8/45/cf03da7b4d74cba1425e35194379511af54c47a01f07bc41cc2084aabe43/google-api-python-client-2.56.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c8/45/cf03da7b4d74cba1425e35194379511af54c47a01f07bc41cc2084aabe43/google-api-python-client-2.56.0.tar.gz
 Summary  : Google API Client Library for Python
