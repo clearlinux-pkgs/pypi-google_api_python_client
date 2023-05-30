@@ -1,5 +1,5 @@
 PKG_NAME := pypi-google_api_python_client
-URL = https://files.pythonhosted.org/packages/3c/f9/abe79be610c4e6613ceaab5d2d3ff54c5c6bc936916566bee28fceef6bdd/google-api-python-client-2.87.0.tar.gz
+URL = https://files.pythonhosted.org/packages/82/9d/22aac91db2ae696423ef5d5331781b7119e54cad0807da81ee8a6ba6129e/google-api-python-client-2.88.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
