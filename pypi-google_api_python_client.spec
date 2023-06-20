@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-google_api_python_client
-Version  : 2.89.0
-Release  : 135
-URL      : https://files.pythonhosted.org/packages/80/92/292a75d3ac9f09c5b0806fc95a509cfa0e4c92b2ba9b3321bc58aa2b5d79/google-api-python-client-2.89.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/80/92/292a75d3ac9f09c5b0806fc95a509cfa0e4c92b2ba9b3321bc58aa2b5d79/google-api-python-client-2.89.0.tar.gz
+Version  : 2.90.0
+Release  : 136
+URL      : https://files.pythonhosted.org/packages/35/8b/d990f947c261304a5c1599d45717d02c27d46af5f23e1fee5dc19c8fa79d/google-api-python-client-2.90.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/35/8b/d990f947c261304a5c1599d45717d02c27d46af5f23e1fee5dc19c8fa79d/google-api-python-client-2.90.0.tar.gz
 Summary  : Google API Client Library for Python
 Group    : Development/Tools
 License  : Apache-2.0
@@ -61,10 +61,10 @@ python3 components for the pypi-google_api_python_client package.
 
 
 %prep
-%setup -q -n google-api-python-client-2.89.0
-cd %{_builddir}/google-api-python-client-2.89.0
+%setup -q -n google-api-python-client-2.90.0
+cd %{_builddir}/google-api-python-client-2.90.0
 pushd ..
-cp -a google-api-python-client-2.89.0 buildavx2
+cp -a google-api-python-client-2.90.0 buildavx2
 popd
 
 %build
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686677935
+export SOURCE_DATE_EPOCH=1687301997
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
