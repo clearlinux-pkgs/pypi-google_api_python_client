@@ -6,10 +6,10 @@
 # autospec commit: ab27b0e
 #
 Name     : pypi-google_api_python_client
-Version  : 2.112.0
-Release  : 159
-URL      : https://files.pythonhosted.org/packages/74/1d/67bc8344aff1530fed2f8be7f8c82ddabf7316b35c60f62ab9d16875adf9/google-api-python-client-2.112.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/74/1d/67bc8344aff1530fed2f8be7f8c82ddabf7316b35c60f62ab9d16875adf9/google-api-python-client-2.112.0.tar.gz
+Version  : 2.113.0
+Release  : 160
+URL      : https://files.pythonhosted.org/packages/13/be/92a5451a52fe40720460848e514b53682a120952740d7b68087f870c3241/google-api-python-client-2.113.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/13/be/92a5451a52fe40720460848e514b53682a120952740d7b68087f870c3241/google-api-python-client-2.113.0.tar.gz
 Summary  : Google API Client Library for Python
 Group    : Development/Tools
 License  : Apache-2.0
@@ -63,10 +63,10 @@ python3 components for the pypi-google_api_python_client package.
 
 
 %prep
-%setup -q -n google-api-python-client-2.112.0
-cd %{_builddir}/google-api-python-client-2.112.0
+%setup -q -n google-api-python-client-2.113.0
+cd %{_builddir}/google-api-python-client-2.113.0
 pushd ..
-cp -a google-api-python-client-2.112.0 buildavx2
+cp -a google-api-python-client-2.113.0 buildavx2
 popd
 
 %build
@@ -74,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1704409200
+export SOURCE_DATE_EPOCH=1704819726
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
